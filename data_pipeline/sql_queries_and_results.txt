@@ -1,0 +1,106 @@
+Query: select_where
+                                                                   title  rating  price_inr
+  The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)       4    6087.35
+                                        A Year in Provence (Provence #1)       4    6000.84
+                                                     The Past Never Ends       4    5960.75
+                                 A Flight of Arrows (The Pathfinders #2)       5    5858.42
+                   Murder at the 42nd Street Library (Raymond Ambler #1)       4    5734.98
+The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)       5    5517.65
+      Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond       4    5214.86
+                                  A Time of Torment (Charlie Parker #14)       5    5100.92
+                                                           Sharp Objects       4    5045.01
+                         The Murder of Roger Ackroyd (Hercule Poirot #4)       4    4652.55
+                                                     While You Were Mine       5    4359.26
+                                                       A Paris Apartment       4    4115.55
+                                                            The Red Tent       5    3762.13
+                         World Without End (The Pillars of the Earth #2)       4    3478.34
+                                                            Mrs. Houdini       5    3191.38
+                                                   The Passion of Dolssa       5    2987.76
+                                               The Marriage of Opposites       4    2962.44
+                                                   Lost Among the Living       4    2922.35
+                                      1,000 Places to See Before You Die       5    2751.44
+       What Happened on Beale Street (Secrets of the South Mysteries #2)       5    2676.54
+                     The Mysterious Affair at Styles (Hercule Poirot #1)       4    2616.40
+                                       The Silkworm (Cormoran Strike #2)       5    2431.78
+                                                  Voyager (Outlander #3)       5    2222.89
+                        Delivering the Truth (Quaker Midwife Mystery #1)       4    2203.90
+                                                  Between Shades of Gray       5    2193.34
+                       A Spy's Devotion (The Regency Spies of London #1)       5    1790.33
+                                                       The Girl You Lost       5    1296.59
+
+--------------------------------------------------------------------------------
+
+Query: order_limit
+                                                                 title  price_inr
+                                         Boar Island (Anna Pigeon #19)    6275.14
+The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)    6087.35
+                                      A Year in Provence (Provence #1)    6000.84
+                                                   The Past Never Ends    5960.75
+                                      The Last Painting of Sara de Vos    5860.52
+                               A Flight of Arrows (The Pathfinders #2)    5858.42
+                 Murder at the 42nd Street Library (Raymond Ambler #1)    5734.98
+                                        The Last Mile (Amos Decker #2)    5719.16
+                                   1st to Die (Women's Murder Club #1)    5694.89
+                                                    Tipping the Velvet    5669.57
+
+--------------------------------------------------------------------------------
+
+Query: distinct
+ category_id
+           1
+           2
+           3
+
+--------------------------------------------------------------------------------
+
+Query: between
+                                                                                            title  price_gbp
+                                                                                The Secret Healer      34.56
+                                                  World Without End (The Pillars of the Earth #2)      32.97
+                                                                         The Great Railway Bazaar      30.54
+                                                                                     Mrs. Houdini      30.25
+                        Forever and Forever: The Courtship of Henry Longfellow and Fanny Appleton      29.69
+                                                                            The Passion of Dolssa      28.32
+                                                                        The Marriage of Opposites      28.08
+                                                                            Lost Among the Living      27.70
+                                                                                        The Widow      27.26
+                                                                 Poisonous (Max Revere Novels #3)      26.80
+                                                                        Girl With a Pearl Earring      26.77
+                                                               1,000 Places to See Before You Die      26.08
+                                                                                         Starlark      25.83
+                                                               Extreme Prey (Lucas Davenport #26)      25.40
+                                What Happened on Beale Street (Secrets of the South Mysteries #2)      25.37
+                                              The Mysterious Affair at Styles (Hercule Poirot #1)      24.80
+                                                              Career of Evil (Cormoran Strike #3)      24.72
+The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2)      23.21
+                                                                The Silkworm (Cormoran Strike #2)      23.05
+                                                                           Voyager (Outlander #3)      21.07
+                                                 Delivering the Truth (Quaker Midwife Mystery #1)      20.89
+                                                                           Between Shades of Gray      20.79
+                                                                             Love, Lies and Spies      20.55
+                                                             Blood Defense (Samantha Brinkman #1)      20.30
+
+--------------------------------------------------------------------------------
+
+Query: in_clause
+                                                                 title      category_name  price_inr
+                                         Boar Island (Anna Pigeon #19)            Mystery    6275.14
+The No. 1 Ladies' Detective Agency (No. 1 Ladies' Detective Agency #1)            Mystery    6087.35
+                                      A Year in Provence (Provence #1)             Travel    6000.84
+                                                   The Past Never Ends            Mystery    5960.75
+                                      The Last Painting of Sara de Vos Historical Fiction    5860.52
+                               A Flight of Arrows (The Pathfinders #2) Historical Fiction    5858.42
+                 Murder at the 42nd Street Library (Raymond Ambler #1)            Mystery    5734.98
+                                        The Last Mile (Amos Decker #2)            Mystery    5719.16
+                                   1st to Die (Women's Murder Club #1)            Mystery    5694.89
+                                                    Tipping the Velvet Historical Fiction    5669.57
+
+--------------------------------------------------------------------------------
+
+Query: join_top_by_category
+     category_name                                                                    title  rating  price_inr
+Historical Fiction                                  A Flight of Arrows (The Pathfinders #2)       5    5858.42
+           Mystery The Bachelor Girl's Guide to Murder (Herringford and Watts Mysteries #1)       5    5517.65
+            Travel                                       1,000 Places to See Before You Die       5    2751.44
+
+--------------------------------------------------------------------------------
