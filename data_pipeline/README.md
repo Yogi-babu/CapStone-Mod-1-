@@ -38,7 +38,7 @@ The script will:
 
 - `price_gbp`: currency symbol stripped and converted to `float`.
 - `rating`: text like `One`/`Five` converted to integer 1–5.
-- `in_stock`: parsed from the availability text and stored as integer 0/1 in SQLite.
+- `in_stock`: parsed from the availability text as a pandas boolean, then inserted into SQLite as integer 0/1 to satisfy the relational schema.
 - For messy or missing numeric values, the pipeline uses median imputation instead of crashing the run. This keeps the ETL resilient while preserving a consistent numeric distribution. Non-critical textual fields that fail parsing are dropped or flagged as missing rather than causing the pipeline to abort.
 
 ## Output artifacts

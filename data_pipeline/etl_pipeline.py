@@ -114,7 +114,7 @@ def robust_clean(raw_rows: list[dict]) -> pd.DataFrame:
     df["price_gbp"] = df["price_gbp_raw"].apply(parse_price)
     df["rating"] = df["rating_raw"].apply(parse_rating)
     df["availability_text"] = df["availability_raw"].fillna("")
-    df["in_stock"] = df["availability_text"].apply(parse_availability).astype(int)
+    df["in_stock"] = df["availability_text"].apply(parse_availability).astype(bool)
 
     if not df["price_gbp"].dropna().empty:
         median_price = df["price_gbp"].median()
@@ -299,6 +299,15 @@ def main() -> None:
     print("Distinct categories:", cleaned_df["category"].nunique())
     print("\nTop 10 books by INR:\n", sql_top_books.to_string(index=False))
     print("\nDistinct categories with rating >= 3:\n", sql_distinct.to_string(index=False))
+    comparison = pd.concat(
+        [
+            sql_join.rename(columns={"category_name": "category_name_sql", "title": "title_sql", "rating": "rating_sql", "price_inr": "price_inr_sql"}),
+            merged_join.rename(columns={"category_name": "category_name_pd", "title": "title_pd", "rating": "rating_pd", "price_inr": "price_inr_pd"}),
+        ],
+        axis=1,
+    )
+    print("\nSQL vs pandas join comparison (side by side):")
+    print(comparison.to_string(index=False))
     print("\nSQL join result matches pandas merge output.")
     print("\nQuery log saved to:", QUERY_LOG_PATH)
 
